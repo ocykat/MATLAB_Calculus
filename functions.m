@@ -15,7 +15,7 @@ disp(g);
 % ***** Composite Function *****
 h = 5 / x;
 k = compose(f, h);
-disp('Composite function h(f(x)): ');
+disp('Composite function f(h(x)): ');
 disp(k);
 
 % ***** Evaluate function at a number *****
