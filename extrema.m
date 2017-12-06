@@ -58,12 +58,26 @@ for i = 1:numel(extrema)
     end
 end
 
-% ***** Global minimum/maximum *****
-x_min = min(extrema);
-y_min = subs(f, x, x_min);
-x_max = max(extrema);
-y_max = subs(f, x, x_max);
-fprintf('Global minimum: x = %f; y = %f', x_min);
-fprintf('Global maximum: x = %f; y = %f', x_max);
-
 % @ Second method: using fminbnd (cannot be used for closed interval)
+
+
+% ***** Global minimum/maximum *****
+min_index = 1;
+y_min = subs(f, x, extrema(1));
+max_index = 1;
+y_max = subs(f, x, extrema(1));
+
+for i = 2:numel(extrema)
+    y = subs(f, x, extrema(i));
+    if (y < y_min)
+        min_index = i;
+        y_min = y;
+    end
+    if (y > y_max)
+        max_index = i;
+        y_max = y;
+    end
+end
+
+fprintf('Global minimum: x = %f; y = %f\n', extrema(min_index), y_min);
+fprintf('Global maximum: x = %f; y = %f\n', extrema(max_index), y_max);

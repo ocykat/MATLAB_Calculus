@@ -22,3 +22,11 @@ step = 5;                % the smaller the step, the smoother the graph
 y    = [a:step:b];       % note: another way is y = linspace(a, step, b);
 g    = y.^2 + 2 * y - 1; % note: if y is followed by the power operator, there must be a dot in between
 plot(y, g);
+
+% ***** Area under the graph *****
+a = -10;
+b = 10;
+step = 0.5;
+y = [a:step:b];
+g = y.^3 + 2 * y.^2 - 5 * y + 1;
+area(g);
