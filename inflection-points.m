@@ -16,3 +16,9 @@ for i = 1:numel(x0_arr)
     y0 = subs(f, x, x0);
     fprintf('x = %f; y = %f\n', x0, y0);
 end
+
+% ***** Graph *****
+fplot(f);
+hold on;
+plot(x0_arr, subs(f, x0_arr), '*');
+hold off;

@@ -81,3 +81,10 @@ end
 
 fprintf('Global minimum: x = %f; y = %f\n', extrema(min_index), y_min);
 fprintf('Global maximum: x = %f; y = %f\n', extrema(max_index), y_max);
+
+
+% ***** Graph *****
+fplot(f);
+hold on;
+plot(extrema, subs(f, extrema), '*');
+hold off;
