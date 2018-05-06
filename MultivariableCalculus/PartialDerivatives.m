@@ -1,8 +1,8 @@
 % ***** Variables *****
-syms x y
+syms x y;
 
 % ***** Function *****
-f = x^2 + y^2 + 2 * x + 3 * y
+f = x^2 + y^2 + 2 * x + 3 * y;
 
 % ***** Partial derivatives *****
 f_x = diff(f, x);
